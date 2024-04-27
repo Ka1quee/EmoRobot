@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Restante do seu CSS aqui */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #1F2731, #37E8D5); /* gradiente linear de vermelho para verde */
+}
+
+.emo_head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #1F2731;
+    background: linear-gradient(to bottom, #1F2731, #516091); /* gradiente linear de vermelho para verde */
+    border-radius: 150px;
+    box-shadow: 7px 16px 7px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.emo_face{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #273136, #2a2f42); /* gradiente linear de vermelho para verde */
+    height: 400px;
+    width: 480px;
+    border-radius: 150px;
+    border: 20px solid grey;
+}
+
+.mouth{
+    position: absolute;
+    bottom: 40px;
+    left: 150px;
+    height: 20px;
+    width: 30px;
+    border-radius: 100px;
+    background-color: #37E8D5;
+
+}
+
+.box {
+    display: flex;
+    gap: 40px;
+
+}
+
+.eye_box{
+    background-color: #37E8D5;
+    border-radius: 30px;
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+.box .eye {
+    position: relative;
+    width: 100px;
+    height: 120px;
+    display: block;
+    margin: 0 20px;
+    border: 50%;
+    border-radius: 30px;
+
+}
+
+.box .eye::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #274b53aa;
+    box-sizing: border-box;
+}
+
+.container-emo-bot{
+    position: relative;
+}
+
+.chat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    height: 30px;
+    width: 50px;
+    background-color: #2a4854;
+    position: absolute;
+    z-index: 1;
+    left: 450px;
+    bottom: 400px;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+    font-size: 16px;
+    line-height: 1.4;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para simular relevo */
+    cursor: pointer;
+}
+
+/* Estilos para simular a ponta do balão de fala */
+.chat::before {
+    content: "";
+    position: absolute;
+    top: 170px;
+    left: 5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #CADEDB transparent transparent transparent; /* Alterando a ordem das cores */
+}
+
+.chat i{
+    font-size: 3rem;
+}
+
+
+.texto{
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #b9b9b9;
+    display: none;
+}
+
+.destaque{
+    color: #0f6e83;
+}
+
+.notify{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: orange;
+    border-radius: 30px;
+    font-size: 2.5rem;
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 70px;
+}
