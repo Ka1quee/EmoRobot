@@ -8,12 +8,20 @@
     font-family: poppins;
 }
 
+:root {
+    --ask-1: #3743e8;
+    --ask-2: #9837e8;
+    --ask-3: #e64bde;
+
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #1F2731, #37E8D5); /* gradiente linear de vermelho para verde */
+    background: linear-gradient(to right, #1F2731, #37E8D5);
+    /* gradiente linear de vermelho para verde */
 }
 
 .emo_head {
@@ -22,25 +30,45 @@ body {
     align-items: center;
     padding: 30px;
     background-color: #1F2731;
-    background: linear-gradient(to bottom, #1F2731, #516091); /* gradiente linear de vermelho para verde */
+    background: linear-gradient(to bottom, #1F2731, #516091);
+    /* gradiente linear de vermelho para verde */
     border-radius: 150px;
-    box-shadow: 7px 16px 7px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+    box-shadow: 7px 16px 7px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.emo_face{
+.emo_face {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #273136, #2a2f42); /* gradiente linear de vermelho para verde */
+    background: linear-gradient(to bottom, #273136, #2a2f42);
+    /* gradiente linear de vermelho para verde */
     height: 400px;
     width: 480px;
     border-radius: 150px;
     border: 20px solid grey;
 }
 
-.mouth{
+.sobrancelha {
+    position: absolute;
+    top: 100px;
+    border-radius: 10px;
+    left: 90px;
+    height: 15px;
+    width: 120px;
+    background-color: #2a4854;
+    transition: 0.5s all;
+}
+
+.sobrancelha_2 {
+    top: 85px;
+    right: 90px;
+    left: 270px;
+
+}
+
+.mouth {
     position: absolute;
     bottom: 40px;
     left: 150px;
@@ -57,11 +85,13 @@ body {
 
 }
 
-.eye_box{
+.eye_box {
     background-color: #37E8D5;
     border-radius: 30px;
     filter: drop-shadow(0 0 2em #646cffaa);
+    transition: 0.5s;
 }
+
 .box .eye {
     position: relative;
     width: 100px;
@@ -70,7 +100,7 @@ body {
     margin: 0 20px;
     border: 50%;
     border-radius: 30px;
-
+    font-size: 0px;
 }
 
 .box .eye::before {
@@ -86,12 +116,13 @@ body {
     box-sizing: border-box;
 }
 
-.container-emo-bot{
+.container-emo-bot {
     position: relative;
 }
 
 .chat {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: 0.2s;
@@ -104,41 +135,45 @@ body {
     bottom: 400px;
     border-radius: 10px;
     padding: 20px;
-    font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+    font-family: 'Poppins', sans-serif;
+    /* Usando a fonte Poppins */
     font-size: 16px;
     line-height: 1.4;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para simular relevo */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Sombra para simular relevo */
     cursor: pointer;
 }
 
 /* Estilos para simular a ponta do balão de fala */
 .chat::before {
     content: "";
+    display: none;
     position: absolute;
     top: 170px;
     left: 5px;
     border-width: 10px;
     border-style: solid;
-    border-color: #CADEDB transparent transparent transparent; /* Alterando a ordem das cores */
+    border-color: #CADEDB transparent transparent transparent;
+    /* Alterando a ordem das cores */
 }
 
-.chat i{
+.chat i {
     font-size: 3rem;
 }
 
 
-.texto{
+.texto {
     font-size: 1.4rem;
     font-weight: 600;
     color: #b9b9b9;
     display: none;
 }
 
-.destaque{
-    color: #0f6e83;
+.destaque {
+    color: #37E8D5;
 }
 
-.notify{
+.notify {
     display: none;
     justify-content: center;
     align-items: center;
@@ -151,4 +186,38 @@ body {
     position: absolute;
     bottom: 40px;
     left: 70px;
+}
+
+.btns {
+    display: none;
+    margin-top: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.btn {
+    padding: 10px;
+    width: auto;
+    background-color: var(--ask-1);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 4px;
+}
+
+.btn_2 {
+    background-color: var(--ask-2);
+}
+
+.btn_3 {
+    background-color: var(--ask-3);
+}
+
+.btn:hover {
+    background-color: rgb(0, 0, 192);
 }

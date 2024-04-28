@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+/* Um pseudo-elemento que serã executado apenas dps do h1 */
+h1::after{
+    content: '|';
+    margin-left: 3px;
+    opacity: 1;
+    /* chamando a animação realizada aqui, tempo de duração, e quantas vezes*/
+    animation: pisca .7s infinite;
+}
+
+@keyframes pisca {
+
+    /* fazendo uma animação a cada estagio do surgimento de cada letra */
+    /* 0%, 100%{
+        opacity: 1;
+    } */
+
+    /* 50%{
+        opacity: 0;
+    } */
+
+
+}
+</style>
+
+<body>
+
+    <h1>Teste de texto igual maquina de escrever</h1>
+     
+
+    <script>
+
+        function typeWrite(elemento){
+            // Responsavel por separar cada letra
+            const textoArray = elemento.innerHTML.split('')
+            elemento.innerHTML=''
+            // for each : para cada
+           textoArray.forEach((letra, i) =>{
+            // dando um tempo pra apresentar cada item
+            setTimeout(()=>
+            elemento.innerHTML+=letra, 75 * i)
+           })
+        }   
+
+
+        const titulo = document.querySelector('h1')
+
+
+        // casp queira utilizar essa function em outro texto, apenas traga o identificado do texto pra dentro do parenteses, isso acontece por que a function ja foi criada com parametro, que pode ser alterado a qualquer momento adicionando uma variavel diferente no lugar do parametro
+        typeWrite(titulo);
+    
+    </script>
+</body>
+</html>
